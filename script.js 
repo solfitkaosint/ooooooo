@@ -1,0 +1,569 @@
+// Данные о продуктах для модального окна
+const productsData = {
+    1: {
+        title: 'NeuralLink Interface v3.2',
+        icon: 'fa-brain',
+        description: 'Прямой нейронный интерфейс для симбиоза с искусственным интеллектом. Расширяет когнитивные способности, позволяет загружать навыки и общаться телепатически.',
+        fullDescription: 'NeuralLink Interface v3.2 представляет собой революционную технологию прямого нейронного интерфейса, разработанную для полной интеграции человеческого сознания с искусственным интеллектом. Система использует нанороботов для создания стабильных нейронных связей без повреждения тканей. Совместима со всеми основными нейросетевыми платформами.',
+        features: [
+            'Скорость передачи данных: 1.2 Тб/с',
+            'Поддержка нейросетей 5 поколения',
+            'Автономная работа: 72 часа',
+            'Биосовместимый нанокорпус',
+            '256-битное шифрование нейросигналов',
+            'Поддержка беспроводной зарядки',
+            'Совместимость с облачными ИИ'
+        ],
+        price: '₿ 0.45',
+        status: 'ДОСТУПЕН ДЛЯ ЗАКАЗА'
+    },
+    2: {
+        title: 'CyberOptic X-9000',
+        icon: 'fa-eye',
+        description: 'Кибернетические глаза с расширенным зрением.',
+        fullDescription: 'CyberOptic X-9000 — это передовая система кибернетического зрения, обеспечивающая расширенный визуальный опыт. Импланты полностью заменяют биологические глаза, предоставляя доступ к множеству визуальных режимов и функций анализа данных в реальном времени. Идеально подходят для профессионалов в области безопасности, исследований и развлечений.',
+        features: [
+            'Разрешение: 64K',
+            'Ночное/тепловое зрение',
+            'Встроенный анализатор угроз',
+            'Запись видео напрямую в облако',
+            'Оптическое увеличение до 50x',
+            'Распознавание лиц на расстоянии до 1 км',
+            'AR-интерфейс с дополненной реальностью'
+        ],
+        price: '₿ 0.32',
+        status: 'ДОСТУПЕН ДЛЯ ЗАКАЗА'
+    },
+    3: {
+        title: 'SynthMuscle Enhancer',
+        icon: 'fa-hand-fist',
+        description: 'Биомеханические импланты для увеличения физической силы и выносливости.',
+        fullDescription: 'SynthMuscle Enhancer — это система биомеханических имплантов, которые интегрируются с вашей мышечной системой, увеличивая физическую силу, выносливость и скорость реакции. Импланты работают в симбиозе с вашим телом, адаптируясь к индивидуальным физиологическим особенностям.',
+        features: [
+            'Увеличение силы: до 800%',
+            'Регенерация тканей',
+            'Адаптация к нагрузкам',
+            'Совместимость с экзокостюмами',
+            'Контроль через нейроинтерфейс',
+            'Автоматическая калибровка',
+            'Энергосберегающий режим'
+        ],
+        price: '₿ 0.67',
+        status: 'ТРЕБУЕТСЯ КОНСУЛЬТАЦИЯ'
+    },
+    4: {
+        title: 'DataShield Implant',
+        icon: 'fa-shield-alt',
+        description: 'Кибернетический имплант для защиты от хакерских атак и цифрового слежения.',
+        fullDescription: 'DataShield Implant — это комплексная система кибербезопасности, встроенная непосредственно в ваш организм. Имплант обеспечивает полную защиту от цифровых угроз, шифрует все исходящие данные и создает ложные цифровые следы для сокрытия вашей реальной активности в сети.',
+        features: [
+            'Квантовое шифрование',
+            'Защита от нейрохакинга',
+            'Генерация цифровых двойников',
+            'Автономный брандмауэр',
+            'Антивирус в реальном времени',
+            'Защита от слежки',
+            'Анонимный режим'
+        ],
+        price: '₿ 0.54',
+        status: 'ДОСТУПЕН ДЛЯ ЗАКАЗА'
+    },
+    5: {
+        title: 'Cognitive Booster Chip',
+        icon: 'fa-microchip',
+        description: 'Микропроцессор для усиления когнитивных функций.',
+        fullDescription: 'Cognitive Booster Chip — это передовой нейропроцессор, разработанный для расширения когнитивных возможностей человека. Чип ускоряет обработку информации, улучшает память, концентрацию и многозадачность, позволяя достигать невероятных интеллектуальных результатов.',
+        features: [
+            'Ускорение мышления: 300%',
+            'Объем памяти: 500 Тб',
+            'Поддержка одновременных процессов',
+            'Интеграция с облачными хранилищами',
+            'Языковая обработка в реальном времени',
+            'Анализ больших данных',
+            'Креативное мышление boost'
+        ],
+        price: '₿ 0.29',
+        status: 'ДОСТУПЕН ДЛЯ ЗАКАЗА'
+    },
+    6: {
+        title: 'BioSynth Regenerator',
+        icon: 'fa-heartbeat',
+        description: 'Биотехнологическая система для ускоренной регенерации тканей и органов.',
+        fullDescription: 'BioSynth Regenerator — это революционная биотехнологическая система, которая постоянно мониторит состояние вашего здоровья и автоматически запускает процессы регенерации при обнаружении повреждений. Система способна восстанавливать ткани, нейтрализовывать токсины и продлевать жизненный цикл клеток.',
+        features: [
+            'Ускорение регенерации: 15x',
+            'Мониторинг 100+ биопараметров',
+            'Нейтрализация токсинов',
+            'Увеличение продолжительности жизни',
+            'Автоматическая диагностика',
+            'Регенерация органов',
+            'Иммунная система boost'
+        ],
+        price: '₿ 0.78',
+        status: 'В РАЗРАБОТКЕ'
+    }
+};
+
+// Основной объект приложения
+const CyberpunkApp = {
+    // Инициализация приложения
+    init: function() {
+        this.setupEventListeners();
+        this.createMatrixEffect();
+        this.initNeonEffects();
+        this.initScrollEffects();
+        this.initStatsCounter();
+        this.typeWriterEffect();
+        
+        // Скрытие загрузчика
+        setTimeout(() => {
+            this.hideLoader();
+        }, 2000);
+    },
+    
+    // Настройка обработчиков событий
+    setupEventListeners: function() {
+        // Переключение мобильного меню
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                menuToggle.innerHTML = mainNav.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+        }
+        
+        // Клик по логотипу
+        const logo = document.getElementById('logo');
+        if (logo) {
+            logo.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Закрытие модального окна
+        const modalClose = document.getElementById('modalClose');
+        const productModal = document.getElementById('productModal');
+        
+        if (modalClose && productModal) {
+            modalClose.addEventListener('click', () => {
+                productModal.classList.remove('active');
+            });
+            
+            // Закрытие по клику вне модального окна
+            productModal.addEventListener('click', (e) => {
+                if (e.target === productModal) {
+                    productModal.classList.remove('active');
+                }
+            });
+            
+            // Закрытие по ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && productModal.classList.contains('active')) {
+                    productModal.classList.remove('active');
+                }
+            });
+        }
+        
+        // Клик по карточкам продуктов для открытия модального окна
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Не открываем модалку если кликнули на статус продукта
+                if (!e.target.classList.contains('product-status')) {
+                    const productId = card.getAttribute('data-product');
+                    this.openProductModal(productId);
+                }
+            });
+        });
+        
+        // Обработка формы подписки
+        const subscribeBtn = document.getElementById('subscribeBtn');
+        const emailInput = document.getElementById('emailInput');
+        
+        if (subscribeBtn && emailInput) {
+            subscribeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.handleSubscription(emailInput, subscribeBtn);
+            });
+            
+            // Отправка по Enter
+            emailInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    this.handleSubscription(emailInput, subscribeBtn);
+                }
+            });
+        }
+        
+        // Кнопка возврата наверх
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Плавная прокрутка для навигационных ссылок
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Закрыть мобильное меню если открыто
+                    this.closeMobileMenu();
+                }
+            });
+        });
+    },
+    
+    // Создание эффекта матричного дождя
+    createMatrixEffect: function() {
+        const matrixBg = document.querySelector('.matrix-bg');
+        if (!matrixBg) return;
+        
+        const columns = Math.floor(window.innerWidth / 20);
+        const style = document.createElement('style');
+        
+        style.textContent = `
+            @keyframes matrixRain {
+                0% { transform: translateY(-100px); opacity: 0; }
+                10% { opacity: 0.8; }
+                90% { opacity: 0.8; }
+                100% { transform: translateY(100vh); opacity: 0; }
+            }
+        `;
+        
+        document.head.appendChild(style);
+        
+        for (let i = 0; i < columns; i++) {
+            const column = document.createElement('div');
+            column.style.position = 'absolute';
+            column.style.top = '-100px';
+            column.style.left = (i * 20) + 'px';
+            column.style.width = '2px';
+            column.style.height = Math.random() * 100 + 50 + 'px';
+            column.style.background = 'linear-gradient(to bottom, transparent, #ff003c, #00ff00)';
+            column.style.opacity = Math.random() * 0.3 + 0.1;
+            column.style.animation = `matrixRain ${Math.random() * 3 + 2}s linear infinite`;
+            column.style.animationDelay = Math.random() * 5 + 's';
+            matrixBg.appendChild(column);
+        }
+    },
+    
+    // Инициализация неоновых эффектов
+    initNeonEffects: function() {
+        const neonTexts = document.querySelectorAll('.neon-text, .neon-red');
+        
+        const randomFlicker = (element) => {
+            const randomTime = Math.random() * 3000 + 2000;
+            const flickerDuration = Math.random() * 200 + 100;
+            
+            setTimeout(() => {
+                element.style.opacity = '0.7';
+                element.style.textShadow = '0 0 5px #ff003c';
+                
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    if (element.classList.contains('neon-text')) {
+                        element.style.textShadow = '0 0 5px #ff003c, 0 0 10px #ff003c, 0 0 15px #ff003c, 0 0 20px #ff003c';
+                    } else {
+                        element.style.textShadow = '0 0 5px #ff003c, 0 0 10px #ff003c';
+                    }
+                    
+                    randomFlicker(element);
+                }, flickerDuration);
+            }, randomTime);
+        };
+        
+        neonTexts.forEach(element => {
+            randomFlicker(element);
+        });
+        
+        // Эффект для карточек при наведении
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 15px 35px rgba(255, 0, 60, 0.5)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 10px 30px rgba(255, 0, 60, 0.4)';
+            });
+        });
+    },
+    
+    // Инициализация эффектов скролла
+    initScrollEffects: function() {
+        const backToTop = document.getElementById('backToTop');
+        const matrixBg = document.querySelector('.matrix-bg');
+        
+        window.addEventListener('scroll', () => {
+            // Кнопка возврата наверх
+            if (backToTop) {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+            
+            // Эффект параллакса
+            if (matrixBg) {
+                matrixBg.style.transform = `translateY(${window.scrollY * 0.1}px)`;
+            }
+            
+            // Анимации появления элементов
+            this.checkScrollAnimations();
+        });
+    },
+    
+    // Проверка анимаций при скролле
+    checkScrollAnimations: function() {
+        const fadeElements = document.querySelectorAll('.fade-in:not(.visible)');
+        
+        fadeElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            if (rect.top <= windowHeight * 0.85) {
+                element.classList.add('visible');
+            }
+        });
+    },
+    
+    // Инициализация счетчиков статистики
+    initStatsCounter: function() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    this.animateCounter(entry.target, target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statNumbers.forEach(stat => observer.observe(stat));
+    },
+    
+    // Анимация счетчика
+    animateCounter: function(element, target) {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 30);
+    },
+    
+    // Эффект набора текста
+    typeWriterEffect: function() {
+        const introText = document.querySelector('.intro p');
+        if (!introText) return;
+        
+        const originalText = introText.textContent;
+        introText.textContent = '';
+        let i = 0;
+        
+        function typeCharacter() {
+            if (i < originalText.length) {
+                introText.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeCharacter, 20);
+            }
+        }
+        
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                typeCharacter();
+                observer.unobserve(introText);
+            }
+        });
+        
+        observer.observe(introText);
+    },
+    
+    // Открытие модального окна с деталями продукта
+    openProductModal: function(productId) {
+        const modal = document.getElementById('productModal');
+        const modalContent = document.getElementById('modalContent');
+        
+        const product = productsData[productId];
+        if (!product) return;
+        
+        modalContent.innerHTML = `
+            <div class="product-icon" style="font-size: 3rem; margin-bottom: 20px;">
+                <i class="fas ${product.icon}"></i>
+            </div>
+            <h2 style="color: #ff003c; margin-bottom: 20px;">${product.title}</h2>
+            <p style="margin-bottom: 20px; font-size: 1.1rem;">${product.fullDescription}</p>
+            <h3 style="color: #fff; margin: 25px 0 15px;">ХАРАКТЕРИСТИКИ</h3>
+            <ul class="product-features" style="margin-bottom: 25px;">
+                ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+            </ul>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
+                <div>
+                    <div class="product-price" style="font-size: 1.5rem;">${product.price}</div>
+                    <span class="product-status ${product.status.includes('ДОСТУПЕН') ? 'available' : ''}">${product.status}</span>
+                </div>
+                <button id="contactBtn" style="padding: 12px 25px; background: #ff003c; color: white; border: none; cursor: pointer; font-weight: bold;">
+                    <i class="fas fa-comment-alt"></i> ЗАПРОСИТЬ КОНСУЛЬТАЦИЮ
+                </button>
+            </div>
+        `;
+        
+        modal.classList.add('active');
+        
+        // Добавляем обработчик для кнопки консультации
+        setTimeout(() => {
+            const contactBtn = document.getElementById('contactBtn');
+            if (contactBtn) {
+                contactBtn.addEventListener('click', () => {
+                    this.showNotification(`Запрос на консультацию по продукту "${product.title}" отправлен!`, 'success');
+                    modal.classList.remove('active');
+                });
+            }
+        }, 100);
+    },
+    
+    // Обработка подписки на обновления
+    handleSubscription: function(emailInput, subscribeBtn) {
+        if (emailInput.value && this.validateEmail(emailInput.value)) {
+            // Анимация успешной подписки
+            subscribeBtn.innerHTML = '<i class="fas fa-check"></i>';
+            subscribeBtn.style.backgroundColor = '#00ff00';
+            subscribeBtn.style.color = '#000';
+            
+            setTimeout(() => {
+                subscribeBtn.innerHTML = 'ПОДПИСАТЬСЯ';
+                subscribeBtn.style.backgroundColor = '#ff003c';
+                subscribeBtn.style.color = 'white';
+                emailInput.value = '';
+            }, 2000);
+            
+            this.showNotification('Вы успешно подписались на обновления!', 'success');
+        } else {
+            // Анимация ошибки
+            emailInput.style.borderColor = '#ff003c';
+            emailInput.style.boxShadow = '0 0 10px rgba(255, 0, 60, 0.5)';
+            
+            setTimeout(() => {
+                emailInput.style.borderColor = '#333';
+                emailInput.style.boxShadow = 'none';
+            }, 2000);
+            
+            this.showNotification('Пожалуйста, введите корректный email', 'error');
+        }
+    },
+    
+    // Валидация email
+    validateEmail: function(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    },
+    
+    // Показать уведомление
+    showNotification: function(message, type) {
+        const notification = document.createElement('div');
+        notification.textContent = message;
+        notification.style.position = 'fixed';
+        notification.style.top = '20px';
+        notification.style.right = '20px';
+        notification.style.padding = '15px 20px';
+        notification.style.background = type === 'success' ? 'rgba(0, 255, 0, 0.2)' : 'rgba(255, 0, 60, 0.2)';
+        notification.style.border = `1px solid ${type === 'success' ? '#00ff00' : '#ff003c'}`;
+        notification.style.color = type === 'success' ? '#00ff00' : '#ff003c';
+        notification.style.zIndex = '10000';
+        notification.style.backdropFilter = 'blur(10px)';
+        notification.style.borderRadius = '5px';
+        notification.style.transform = 'translateX(100%)';
+        notification.style.transition = 'transform 0.3s ease';
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 10);
+        
+        setTimeout(() => {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 3000);
+    },
+    
+    // Закрытие мобильного меню
+    closeMobileMenu: function() {
+        const mainNav = document.getElementById('mainNav');
+        const menuToggle = document.getElementById('menuToggle');
+        
+        if (mainNav && mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    },
+    
+    // Скрытие загрузчика
+    hideLoader: function() {
+        const loader = document.getElementById('loader');
+        if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+                // Запускаем проверку анимаций после загрузки
+                this.checkScrollAnimations();
+            }, 500);
+        }
+    },
+    
+    // Глитч-эффект при загрузке
+    addGlitchEffect: function() {
+        const titles = document.querySelectorAll('h1, h2, h3');
+        titles.forEach(title => {
+            setTimeout(() => {
+                title.style.transform = 'translateX(2px)';
+                title.style.color = '#ff00ff';
+                
+                setTimeout(() => {
+                    title.style.transform = 'translateX(0)';
+                    title.style.color = '';
+                }, 100);
+            }, Math.random() * 1000);
+        });
+    }
+};
+
+// Запуск приложения при загрузке DOM
+document.addEventListener('DOMContentLoaded', function() {
+    CyberpunkApp.init();
+    
+    // Добавляем глитч-эффект при полной загрузке
+    window.addEventListener('load', function() {
+        CyberpunkApp.addGlitchEffect();
+    });
+});
